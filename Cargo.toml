@@ -3,7 +3,10 @@ name = "wasm_framework_tests"
 version = "0.1.0"
 edition = "2021"
 
-[lib]
-crate-type = ["cdylib"]
+#[lib]
+#crate-type = ["cdylib"]
 
 [dependencies]
+httpcodec = "0.2.3"
+bytecodec = "0.4.15"
+wasmedge_wasi_socket = { git = "https://github.com/labormedia/wasmedge_wasi_socket.git" }

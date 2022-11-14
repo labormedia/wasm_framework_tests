@@ -11,3 +11,4 @@ Tests for multi_threaded wasm calls.
 
 ### Installing WasmEdge
 https://wasmedge.org/book/en/quick_start/install.html
+https://wasmedge.org/book/en/sdk/rust.html
