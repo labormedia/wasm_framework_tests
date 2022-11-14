@@ -3,6 +3,7 @@ Tests for multi_threaded wasm calls.
 
 ## Installation
 `cargo add wasm32-wasi`
+
 `cargo build --target wasm32-wasi`
 
 ### Running functions with Wasmtime
