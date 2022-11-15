@@ -10,3 +10,20 @@ edition = "2021"
 httpcodec = "0.2.3"
 bytecodec = "0.4.15"
 wasmedge_wasi_socket = { git = "https://github.com/labormedia/wasmedge_wasi_socket.git" }
+libp2p = { git = "https://github.com/petaloop/rust-libp2p", optional = true, features = [ "wasm-ext", "wasm-ext-websocket", "ping"] }
+libp2p-swarm = { version = "0.40.1", optional = true }
+libp2p-core = { version = "0.37.0", optional = true }
+libp2p-mdns = { version = "0.41.0", optional = true }
+
+[features]
+full = [
+    "libp2p-core",
+    "libp2p",
+    "libp2p-mdns",
+    "libp2p-swarm"
+]
+p2p = [ "libp2p"]
+
+[[example]]
+name = "libp2p"
+required-features = ["libp2p"]
