@@ -1,20 +1,12 @@
 use bytecodec::DecodeExt;
 use httpcodec::{HttpVersion, ReasonPhrase, Request, RequestDecoder, Response, StatusCode};
 use std::io::{Read, Write};
-// use wasmedge_wasi_socket as sys;
-// use self::sys::{Shutdown, TcpListener, TcpStream};
 use wasmedge_wasi_socket::{Shutdown, TcpListener, TcpStream};
-// #[cfg(feature = "libp2p")]
-// #[cfg_attr(docsrs, doc(cfg(feature = "libp2p")))]
-// use libp2p::{
-//     identity,
-//     // mdns::{Mdns, MdnsConfig, MdnsEvent},
-//     swarm::{Swarm, SwarmEvent},
-//     PeerId,
-// };
 // use libp2p::swarm::{NetworkBehaviour, Swarm, SwarmEvent};
 // use libp2p::{identity, ping, Multiaddr, PeerId};
 // use libp2p_swarm::keep_alive;
+// use wasmedge_bindgen::*;
+// use wasmedge_bindgen_macro::*;
 
 fn handle_http(req: Request<String>) -> bytecodec::Result<Response<String>> {
     Ok(Response::new(
@@ -84,8 +76,18 @@ pub extern "C" fn http_server() {
     }
 }
 
+// #[wasmedge_bindgen]
 #[no_mangle]
 pub extern "C" fn p2p() {
+    println!("Starting...");
+    #[cfg(feature = "p2p")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "p2p")))]
+    use libp2p::{
+        // identity,
+    //     // mdns::{Mdns, MdnsConfig, MdnsEvent},
+    //     swarm::{Swarm, SwarmEvent},
+        PeerId,
+    };
     // let local_key = identity::Keypair::generate_ed25519();
     // let local_peer_id = PeerId::from(local_key.public());
     // println!("Local peer id: {local_peer_id:?}");

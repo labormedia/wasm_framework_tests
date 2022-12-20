@@ -1874,13 +1874,33 @@ dependencies = [
  "libp2p-core 0.37.0",
  "libp2p-mdns",
  "libp2p-swarm 0.40.1",
+ "wasmedge-bindgen",
+ "wasmedge-bindgen-macro",
  "wasmedge_wasi_socket",
+]
+
+[[package]]
+name = "wasmedge-bindgen"
+version = "0.1.14"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f1bae93d924a4646ccaeda139dec350205c89e9d5e13e9667423c0d641090a27"
+
+[[package]]
+name = "wasmedge-bindgen-macro"
+version = "0.1.14"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7c8504d8f1db51fb1b0222b725d34e0b48790e15f339abf7b4c9398c7489db2d"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]
 name = "wasmedge_wasi_socket"
 version = "0.4.2"
-source = "git+https://github.com/labormedia/wasmedge_wasi_socket.git#bcf4fe2f19ac4629d1d56ff0f4ac882a5babdfa3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2fc4e93009d7e2c2e3d29b65d1f56ef606466673e85fe417808beca50cb608bf"
 dependencies = [
  "libc",
 ]
@@ -2057,3 +2077,8 @@ dependencies = [
  "syn",
  "synstructure",
 ]
+
+[[patch.unused]]
+name = "wasm-bindgen"
+version = "0.2.79"
+source = "git+https://github.com/KernelErr/wasm-bindgen.git?branch=wasi-compat#e0bd04fe20fdbff9d9e81edf22939c7067a2e5b0"
