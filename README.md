@@ -13,5 +13,8 @@ Tests for multi_threaded wasm calls.
 https://wasmedge.org/book/en/quick_start/install.html
 https://wasmedge.org/book/en/sdk/rust.html
 
+### Running functions with WasmEdge
+`wasmedge --reactor target/wasm32-wasi/release/wasm_framework_tests.wasm http_server`
+
 ## wasmedgec optimization
 wasmedgec target/wasm32-wasi/debug/examples/libp2p.wasm target/wasm32-wasi/debug/examples/libp2p.so
